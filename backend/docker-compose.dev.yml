@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: aspire-forms-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: webapi
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: AspireFormsDb

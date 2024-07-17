@@ -1,0 +1,8 @@
+{
+    // Please create a testsettings.Development.json file to override the settings in this file.
+    // testsettings.Development.json is ignored by git.
+    "openAi": {
+        "areTestsEnabled": false,
+        "apiKey": ""
+    }
+}

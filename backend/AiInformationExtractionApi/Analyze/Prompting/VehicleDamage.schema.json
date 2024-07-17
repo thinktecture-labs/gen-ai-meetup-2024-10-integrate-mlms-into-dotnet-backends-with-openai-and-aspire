@@ -1,0 +1,55 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "VehicleDamageDto",
+    "type": "object",
+    "definitions": {
+        "DamageType": {
+            "type": "string",
+            "enum": [
+                "None",
+                "Scratch",
+                "Crack",
+                "Dent",
+                "Chip",
+                "Hole",
+                "Tear",
+                "Dislodgement",
+                "Misalignment"
+            ]
+        }
+    },
+    "properties": {
+        "FrontBumper": { "$ref": "#/definitions/DamageType" },
+        "RearBumper": { "$ref": "#/definitions/DamageType" },
+        "Hood": { "$ref": "#/definitions/DamageType" },
+        "TrunkLid": { "$ref": "#/definitions/DamageType" },
+        "Roof": { "$ref": "#/definitions/DamageType" },
+        "FrontLeftDoor": { "$ref": "#/definitions/DamageType" },
+        "FrontRightDoor": { "$ref": "#/definitions/DamageType" },
+        "RearLeftDoor": { "$ref": "#/definitions/DamageType" },
+        "RearRightDoor": { "$ref": "#/definitions/DamageType" },
+        "FrontLeftFender": { "$ref": "#/definitions/DamageType" },
+        "FrontRightFender": { "$ref": "#/definitions/DamageType" },
+        "RearLeftFender": { "$ref": "#/definitions/DamageType" },
+        "RearRightFender": { "$ref": "#/definitions/DamageType" },
+        "Grille": { "$ref": "#/definitions/DamageType" },
+        "LeftHeadlights": { "$ref": "#/definitions/DamageType" },
+        "RightHeadlights": { "$ref": "#/definitions/DamageType" },
+        "LeftTaillights": { "$ref": "#/definitions/DamageType" },
+        "RightTaillights": { "$ref": "#/definitions/DamageType" },
+        "LeftSideMirror": { "$ref": "#/definitions/DamageType" },
+        "RightSideMirror": { "$ref": "#/definitions/DamageType" },
+        "Windshield": { "$ref": "#/definitions/DamageType" },
+        "RearWindshield": { "$ref": "#/definitions/DamageType" },
+        "FrontLeftWindow": { "$ref": "#/definitions/DamageType" },
+        "FrontRightWindow": { "$ref": "#/definitions/DamageType" },
+        "RearLeftWindow": { "$ref": "#/definitions/DamageType" },
+        "RearRightWindow": { "$ref": "#/definitions/DamageType" },
+        "FrontLeftWheel": { "$ref": "#/definitions/DamageType" },
+        "FrontRightWheel": { "$ref": "#/definitions/DamageType" },
+        "RearLeftWheel": { "$ref": "#/definitions/DamageType" },
+        "RearRightWheel": { "$ref": "#/definitions/DamageType" },
+        "LeftExteriorTrim": { "$ref": "#/definitions/DamageType" },
+        "RightExteriorTrim": { "$ref": "#/definitions/DamageType" }
+    }
+}

@@ -1,0 +1,10 @@
+.vs/
+.vscode/
+.idea/
+bin/
+obj/
+audio/
+*.user
+*.suo
+appsettings.*.json
+testsettings.*.json

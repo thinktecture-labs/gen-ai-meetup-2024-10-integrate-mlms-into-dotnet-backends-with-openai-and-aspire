@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+    <PropertyGroup>
+        <UserSecretsId>726b3443-944d-4fa1-8a56-499f605a0606</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Shared\Shared.csproj" />
+        <PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.2.1" />
+        <PackageReference Include="Light.DatabaseAccess.EntityFrameworkCore" Version="1.1.0" />
+        <PackageReference Include="Light.EmbeddedResources" Version="1.1.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.10" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="OpenAI" Version="2.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Analyze\Prompting\Circumstances.schema.json" />
+        <EmbeddedResource Include="Analyze\Prompting\PersonalData.schema.json" />
+        <EmbeddedResource Include="Analyze\Prompting\VehicleDamage.schema.json" />
+    </ItemGroup>
+
+</Project>
