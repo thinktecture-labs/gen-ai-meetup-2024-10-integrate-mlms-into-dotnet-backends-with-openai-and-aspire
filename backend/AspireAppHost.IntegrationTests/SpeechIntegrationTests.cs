@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using Light.EmbeddedResources;
 using Shared;
-using Shared.JsonAccess;
 using Shared.Messages.Analyze;
 using Shared.Messages.DamageReports;
 using Xunit;
@@ -43,7 +42,7 @@ public sealed class SpeechIntegrationTests
             InsuranceId = "AB-1234567"
         };
         var analyzeSpeechRequestDto = new AnalyzeSpeechRequestDto(FormSection.Circumstances, existingInformation);
-        content.Add(JsonContent.Create(analyzeSpeechRequestDto, options: Json.Options));
+        content.Add(JsonContent.Create(analyzeSpeechRequestDto, options: Shared.JsonAccess.Json.Options));
         await using var mp3Stream =
             typeof(SpeechIntegrationTests).GetEmbeddedStream("vehicle-theft-in-front-of-supermarket.mp3");
         using var streamContent = new StreamContent(mp3Stream);
@@ -53,7 +52,7 @@ public sealed class SpeechIntegrationTests
 
         // Assert
         response.EnsureSuccessStatusCode();
-        var result = await response.Content.ReadFromJsonAsync<AnalysisResponseDto>(Json.Options);
+        var result = await response.Content.ReadFromJsonAsync<AnalysisResponseDto>(Shared.JsonAccess.Json.Options);
         var expectedResponse = new AnalysisResponseDto(
             AnalysisType.Speech,
             FormSection.Circumstances,

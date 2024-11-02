@@ -1,5 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+    <Sdk Name="Aspire.AppHost.Sdk" Version="9.0.0-rc.1.24511.1" />
+
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <IsAspireHost>true</IsAspireHost>
@@ -7,8 +9,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Aspire.Hosting.AppHost" Version="8.2.1" />
-        <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="8.2.1" />
+        <PackageReference Include="Aspire.Hosting.AppHost" Version="9.0.0-rc.1.24511.1" />
+        <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.0.0-rc.1.24511.1" />
     </ItemGroup>
 
     <ItemGroup>

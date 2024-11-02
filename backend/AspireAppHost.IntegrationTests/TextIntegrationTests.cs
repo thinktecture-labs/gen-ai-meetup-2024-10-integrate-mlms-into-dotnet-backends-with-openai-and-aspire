@@ -3,7 +3,6 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using FluentAssertions;
 using Shared;
-using Shared.JsonAccess;
 using Shared.Messages.Analyze;
 using Shared.Messages.DamageReports;
 using Xunit;
@@ -22,7 +21,8 @@ public sealed class TextIntegrationTests
     {
         AspireFixture.SkipTestIfNecessary();
 
-        using var httpClient = await _fixture.CreateAuthenticatedHttpClientAsync(Constants.AiInformationExtractionServiceName);
+        using var httpClient =
+            await _fixture.CreateAuthenticatedHttpClientAsync(Constants.AiInformationExtractionServiceName);
         using var response = await httpClient.PutAsJsonAsync(
             "/api/analyze/text",
             new AnalyzeTextRequestDto(
@@ -36,7 +36,8 @@ public sealed class TextIntegrationTests
         );
 
         response.EnsureSuccessStatusCode();
-        var analysisResponse = await response.Content.ReadFromJsonAsync<AnalysisResponseDto>(Json.Options);
+        var analysisResponse =
+            await response.Content.ReadFromJsonAsync<AnalysisResponseDto>(Shared.JsonAccess.Json.Options);
         var expectedResponse = new AnalysisResponseDto(
             AnalysisType.Text,
             FormSection.PersonalData,
@@ -51,7 +52,7 @@ public sealed class TextIntegrationTests
                 DateOfBirth = new DateOnly(1985, 11, 15),
                 Telephone = "+44 2071234567",
                 Email = "anna.smith@example.com",
-                InsuranceId = "AB-1234567"
+                InsuranceId = "AB-1234567",
             }
         );
         analysisResponse.Should().Be(expectedResponse);

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using Light.EmbeddedResources;
 using Shared;
-using Shared.JsonAccess;
 using Shared.Messages.Analyze;
 using Shared.Messages.DamageReports;
 using Xunit;
@@ -50,10 +49,11 @@ public sealed class ImageIntegrationTests
         using var analyzeResponse = await httpClient.PutAsJsonAsync(
             "/api/analyze/image",
             new AnalyzeImageRequestDto(FormSection.VehicleDamage, imageId),
-            Json.Options
+            Shared.JsonAccess.Json.Options
         );
         analyzeResponse.EnsureSuccessStatusCode();
-        var analysisResponseDto = await analyzeResponse.Content.ReadFromJsonAsync<AnalysisResponseDto>(Json.Options);
+        var analysisResponseDto =
+            await analyzeResponse.Content.ReadFromJsonAsync<AnalysisResponseDto>(Shared.JsonAccess.Json.Options);
         var expectedResponseDto = new AnalysisResponseDto(
             AnalysisType.Image,
             FormSection.VehicleDamage,

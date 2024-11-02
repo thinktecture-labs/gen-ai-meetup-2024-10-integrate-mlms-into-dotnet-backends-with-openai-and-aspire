@@ -5,7 +5,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Shared\Shared.csproj" />
-        <PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.2.1" />
+        <PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.0-rc.1.24511.1" />
         <PackageReference Include="Light.DatabaseAccess.EntityFrameworkCore" Version="1.1.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
             <PrivateAssets>all</PrivateAssets>
