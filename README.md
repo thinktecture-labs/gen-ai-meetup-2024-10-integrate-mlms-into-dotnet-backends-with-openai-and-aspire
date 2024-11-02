@@ -23,14 +23,7 @@ You can also use [dotnet user-secrets](https://learn.microsoft.com/en-us/aspnet/
 
 ## How to compile and run the example
 
-Before you can compile the example, you need to download the .NET aspire workload. Execute the following statements in a terminal of your choice.
-
-```bash
-dotnet workload update
-dotnet workload install aspire
-```
-
-Afterwards, you should be able to build and run the solution via your IDE or with `dotnet run`.
+Simply build and run the solution via your IDE or with `dotnet run`.
 
 The most important integration tests can be found in the `AspireAppHost.IntegrationTests` project:
 
